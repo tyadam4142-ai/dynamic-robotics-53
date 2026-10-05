@@ -1,0 +1,18 @@
+DYNAMIC ROBOTICS 53 — GITHUB PAGES FIX
+
+IMPORTANT:
+Do NOT upload this ZIP as a single file to GitHub.
+Extract it first, then upload/replace the repository CONTENTS.
+
+The repository must contain:
+  .github/workflows/pages.yml
+  index.html
+  package.json
+  vite.config.ts
+  src/
+  public/
+
+In GitHub:
+Settings -> Pages -> Build and deployment -> Source -> GitHub Actions
+
+The workflow builds the React/Vite site and deploys dist/.

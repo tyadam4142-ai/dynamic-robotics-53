@@ -1,0 +1,12 @@
+DYNAMIC ROBOTICS 53 — GITHUB PAGES SETUP
+
+1. Extract this ZIP. Do NOT upload the .zip itself to GitHub.
+2. Copy the CONTENTS of the extracted folder into your local clone of
+   tyadam4142-ai/dynamic-robotics-53 (replace existing files), then push.
+3. One-time GitHub setting (this is what stops the Jekyll blank page):
+   Repo -> Settings -> Pages -> Build and deployment -> Source = "GitHub Actions"
+4. The workflow .github/workflows/pages.yml runs: npm ci -> type check -> npm run build -> deploy dist/.
+5. Custom domain: public/CNAME (dynamicrobotics53.com) is copied into dist/ on every build.
+
+Android download: the T53 buttons link to https://t53.dynamicrobotics53.com/download/ .
+The APK itself is published from the T53 backend (see backend/scripts/publish_apk.sh).

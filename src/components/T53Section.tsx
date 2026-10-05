@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -9,8 +9,33 @@ import {
 } from 'lucide-react';
 
 const T53_DOWNLOAD_URL = 'https://t53.dynamicrobotics53.com/download/';
+// The APK lives in this repo at public/downloads/T53-Android.apk and is served from the same site.
+const APK_FILE = 'T53-Android.apk';
+const APK_URL = `${import.meta.env.BASE_URL}downloads/${APK_FILE}`;
 
 export const T53Section: React.FC = () => {
+  // True only when the APK file really exists on the site, so the button never leads to a 404.
+  const [apkReady, setApkReady] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(APK_URL, {method: 'HEAD', cache: 'no-store'})
+      .then((res) => {
+        const type = res.headers.get('content-type') || '';
+        if (!cancelled) setApkReady(res.ok && !type.includes('text/html'));
+      })
+      .catch(() => {
+        if (!cancelled) setApkReady(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const androidLink = apkReady
+    ? {href: APK_URL, download: APK_FILE}
+    : {href: T53_DOWNLOAD_URL, target: '_blank', rel: 'noopener noreferrer'};
+
   return (
     <section
       id="t53"
@@ -80,14 +105,12 @@ export const T53Section: React.FC = () => {
 
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href={T53_DOWNLOAD_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...androidLink}
                 className="btn-shimmer inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#c99a2e] to-[#f1ca62] text-black font-bold text-xs uppercase tracking-wider shadow-[0_0_28px_rgba(201,154,46,0.3)] hover:shadow-[0_0_40px_rgba(241,202,98,0.45)] hover:scale-[1.02] transition-all"
               >
                 <Download className="w-4 h-4" />
-                Download for Android
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                {apkReady ? 'Download APK for Android' : 'Download for Android'}
+                {apkReady ? null : <ArrowUpRight className="w-3.5 h-3.5" />}
               </a>
               <a
                 href="https://t53.dynamicrobotics53.com/"
@@ -129,13 +152,11 @@ export const T53Section: React.FC = () => {
                     </div>
                   </div>
                   <a
-                    href={T53_DOWNLOAD_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...androidLink}
                     className="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#f1ca62] text-black text-[10px] font-bold uppercase tracking-wider hover:bg-white transition-colors"
                   >
                     Get T53
-                    <ArrowUpRight className="w-3 h-3" />
+                    {apkReady ? <Download className="w-3 h-3" /> : <ArrowUpRight className="w-3 h-3" />}
                   </a>
                 </div>
 

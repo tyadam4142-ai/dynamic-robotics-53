@@ -4,10 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
+    "dev": "vite --port=3000 --host=127.0.0.1",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "setup": "./scripts/setup.sh",
+    "start": "./scripts/start.sh",
+    "test": "npm run sales:test",
+    "sales:setup": "./scripts/setup.sh",
+    "sales:start": "./scripts/start.sh",
+    "sales:test": "npm --prefix sales-command-centre test",
+    "sales:health": "./scripts/health-check.sh"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

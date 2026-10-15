@@ -1,0 +1,12 @@
+{
+  "name": "dr53-ai-sales",
+  "version": "0.9.0-local",
+  "private": true,
+  "description": "DR53 AI Sales Command Centre — local-first AI sales agent, CRM, interruptible local voice assist, persistent quick-save CRM and approved product knowledge. Zero dependencies.",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js",
+    "health": "./scripts/health-check.sh"
+  }
+}

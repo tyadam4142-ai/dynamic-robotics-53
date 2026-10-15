@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DR53 AI Sales Command Centre</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>▲</text></svg>">
+</head>
+<body>
+<div id="login" class="login" hidden>
+  <form id="loginForm" class="loginCard">
+    <h1>DR53 Command Centre</h1>
+    <p>This app is protected. Enter the access token from your <code>.env</code> (DR53_ACCESS_TOKEN).</p>
+    <input id="loginToken" type="password" autocomplete="current-password" placeholder="Access token" required>
+    <button class="b wide" type="submit">Unlock</button>
+    <div id="loginError" class="err" role="alert"></div>
+  </form>
+</div>
+
+<nav id="nav" hidden>
+  <div class="logo">DYNAMIC ROBOTICS 53<small>AI Sales Command Centre</small></div>
+  <div id="navButtons"></div>
+  <div class="navFoot">
+    <div id="connState" class="subtle">connecting…</div>
+    <button id="logoutBtn" class="ghost" hidden>Log out</button>
+  </div>
+</nav>
+
+<main id="main" hidden>
+  <header>
+    <div>
+      <h1 id="pageTitle">Overview</h1>
+      <div id="headline" class="subtle"></div>
+    </div>
+    <div class="headerPills">
+      <span class="pill" id="pillAi"><i class="dot"></i>AI: checking</span>
+      <span class="pill warn" id="pillKill" hidden>KILL SWITCH ON</span>
+      <span class="pill" id="clock"></span>
+    </div>
+  </header>
+  <section id="view" aria-live="polite"></section>
+</main>
+
+<div id="toast" class="toast" hidden></div>
+<script src="/speech.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

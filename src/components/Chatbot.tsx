@@ -81,7 +81,7 @@ export const Chatbot: React.FC = () => {
     // 2. Hardware Builds Overview
     if (q.includes('build') || q.includes('projects') || q.includes('hardware') || q.includes('portfolio') || q.includes('what do you build')) {
       return {
-        text: 'DR53 has 7 core hardware engineering builds:\n1. Autonomous Robotics (ESP32 LiDAR rover)\n2. Talking Gesture Glove (sign-to-speech assistive glove)\n3. AI & Computer Vision (PPE helmet/person detection & sorting)\n4. Embedded Electronics Systems (ESP32/Arduino circuitry)\n5. Servo Articulated Robotic Hand (PCA9685 PWM multi-joint fingers)\n6. Trash Collecting Rover (solar assisted vacuum cleanup)\n7. E-Adapter Power Bank (IPS306 solar + manual hand crank emergency charger — ₹2,553)',
+        text: 'The DR53 website showcases robotics, a Talking Gesture Glove, AI and computer-vision projects, embedded electronics, a robotic hand, a waste-collection rover, and the E-Adapter. I can share the listed project categories, but please ask the DR53 team to confirm current technical specifications and availability.',
         waText: 'Hi Adam, I want to discuss your hardware engineering builds.'
       };
     }
@@ -89,7 +89,7 @@ export const Chatbot: React.FC = () => {
     // 3. E-Adapter Power Bank
     if (q.includes('e-adapter') || q.includes('adapter') || q.includes('crank') || q.includes('solar charger') || q.includes('power bank')) {
       return {
-        text: 'The E-Adapter is our tactical emergency power bank (IPS306 Power / Solar / Crank). It features a 10,000mAh high-density cell, a top solar absorption panel, and a folding mechanical hand-crank dynamo so you can generate emergency power anywhere off the grid. Price is ₹2,553 with direct courier dispatch from Pune.',
+        text: 'The E-Adapter is listed at ₹2,553. Its technical specifications and exact included components have not been verified, so the DR53 team should confirm compatibility and product details before you decide.',
         waText: 'Hi Adam, I want to purchase the E-Adapter Power Bank for ₹2553.'
       };
     }
@@ -97,7 +97,7 @@ export const Chatbot: React.FC = () => {
     // 4. Tap Tag Cards (Zero NFC mention as requested)
     if (q.includes('tap tag') || q.includes('tap card') || q.includes('business card') || q.includes('touchless') || q.includes('smart card')) {
       return {
-        text: 'DR53 Tap Tag is our secret instant-touch smart profile card! Simply tap it against any iPhone or Android phone, and it immediately transmits your website, WhatsApp, catalog, Google reviews, or digital contact card. Zero app needed on the client\'s phone!\n• Sticker Smart Tag: ₹553\n• Hot Top Card: ₹753\n• Executive Matte Edition: ₹1,553',
+        text: 'DR53 lists a Tap Tag Sticker at ₹553 and a Tap Tag Card at ₹753. The sticker is described as opening a digital profile or webpage when tapped; the card is described as carrying your logo and opening its linked profile webpage. Please confirm device compatibility, customisation, stock, and delivery details with the team.',
         waText: 'Hi Adam, I want to order the DR53 Tap Tag Smart Card.'
       };
     }
@@ -105,7 +105,7 @@ export const Chatbot: React.FC = () => {
     // 5. Website Pricing & Packages
     if (q.includes('price') || q.includes('cost') || q.includes('how much') || q.includes('package') || q.includes('pricing') || q.includes('website')) {
       return {
-        text: 'DR53 crafts high-performance custom business websites with instant WhatsApp lead generation:\n• Starter Package: ₹5,300 (Up to 2 pages, mobile responsive, dark aesthetic)\n• Professional Package: ₹7,500 (Up to 5 pages, catalog/lookbook, SEO, lead form)\n• Enterprise / Business: ₹10,000 (Up to 8 pages, priority 48h build, custom interactive features)\nUse our interactive website builder below to select add-ons and calculate your live quote!',
+        text: 'Website projects start at ₹5,300; that is not a guaranteed final price. The team scopes the quote to your requirements, pages, content, features, and any domain or hosting needs. The website configurator can help outline a request, and DR53 should confirm the final scope, price, and timeline.',
         waText: 'Hi Adam, I would like a quote for a custom business website.'
       };
     }
@@ -113,7 +113,7 @@ export const Chatbot: React.FC = () => {
     // 6. Clothing / Fashion Category
     if (q.includes('clothing') || q.includes('fashion') || q.includes('apparel') || q.includes('boutique') || q.includes('brand')) {
       return {
-        text: 'For Clothing & Fashion brands, we recommend our Professional Package (₹7,500) paired with the Interactive Lookbook Gallery (+₹900) and Direct WhatsApp Order Cart (+₹700). Your customers can browse your seasonal collection, view fabric details, and order directly on WhatsApp without high e-commerce commission cuts!',
+        text: 'DR53 can discuss a website for a clothing or fashion business. The project scope and price depend on the pages, content, and features you need; tell the team about your collection and goals so they can confirm a suitable proposal.',
         waText: 'Hi Adam, I want a website designed for my Clothing / Fashion brand.'
       };
     }
@@ -121,7 +121,7 @@ export const Chatbot: React.FC = () => {
     // 7. Industrial / Manufacturing Category
     if (q.includes('industrial') || q.includes('factory') || q.includes('machinery') || q.includes('manufacturing') || q.includes('fabricat')) {
       return {
-        text: 'For Industrial & Manufacturing companies, we recommend our Professional (₹7,500) or Enterprise Package (₹10,000) with a Technical Specification Matrix, PDF Spec Sheet downloads, and a Direct Request for Quote (RFQ) Form (+₹800). This helps you win high-value B2B and export contracts.',
+        text: 'DR53 can discuss a website for an industrial or manufacturing business. Share the products or services you need to present and any required technical content; the team will confirm the scope, features, and quote.',
         waText: 'Hi Adam, I need an industrial manufacturing website designed.'
       };
     }
@@ -145,14 +145,14 @@ export const Chatbot: React.FC = () => {
     // 10. Assistive Glove & AI Vision
     if (q.includes('glove') || q.includes('vision') || q.includes('opencv') || q.includes('camera') || q.includes('sign language')) {
       return {
-        text: 'Our Talking Gesture Glove translates flex sensor finger movements and MPU6050 orientation into speech audio. Our AI Vision system runs edge detection on Raspberry Pi 5 for industrial worker safety (detecting helmets & vests with 98% accuracy) and conveyor sorting.',
+        text: 'The DR53 website showcases a Talking Gesture Glove and AI and computer-vision projects. I do not have verified performance specifications or availability details here; the team can confirm the current capabilities and arrange a discussion.',
         waText: 'Hi Adam, I am very interested in your AI Vision & Assistive Glove builds.'
       };
     }
 
     // Default intelligent fallback
     return {
-      text: `I'd love to help you with that! I can provide technical blueprints on our 7 hardware builds, calculate an exact website quote for your industry (${BUSINESS_CATEGORIES.map(c => c.name.split(' ')[0]).join(', ')}), or set up a Tap Tag smart card order. You can also chat directly with Adam on WhatsApp at +91 81499 16052.`,
+      text: `I can share the listed product information, help outline a website enquiry for ${BUSINESS_CATEGORIES.map(c => c.name.split(' ')[0]).join(', ')}, or help you contact the DR53 team. I cannot confirm unlisted specifications, availability, or a final project quote.`,
       waText: `Hi Adam, I have a question regarding: "${query}"`
     };
   };
@@ -234,10 +234,10 @@ export const Chatbot: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
-                  DR53 Concierge
+                  DR53 Website Assistant
                   <Sparkles className="w-3.5 h-3.5 text-[#f1ca62]" />
                 </h4>
-                <span className="text-[11px] font-mono text-emerald-400">System Online · Direct Access</span>
+                <span className="text-[11px] font-mono text-emerald-400">Website FAQ · fixed answers</span>
               </div>
             </div>
 

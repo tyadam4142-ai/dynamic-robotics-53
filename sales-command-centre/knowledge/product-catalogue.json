@@ -1,0 +1,42 @@
+{
+  "business": {
+    "name": "Dynamic Robotics 53",
+    "website": "https://dynamicrobotics53.com",
+    "currency": "INR",
+    "voice": "Professional, friendly, concise, transparent that the assistant is AI"
+  },
+  "products": [
+    {
+      "id": "tap-sticker",
+      "name": "Tap Tag Sticker",
+      "price": 553,
+      "priceType": "fixed",
+      "active": true,
+      "description": "Listed price: ₹553. A personalised tap-enabled sticker that opens the customer's digital profile or webpage, which can include Instagram and other links. Before promising an order, confirm artwork, quantity, device compatibility, customisation requirements, stock, and delivery timeline with the DR53 team. Do not invent sticker material, durability, water resistance, chip type, or delivery dates."
+    },
+    {
+      "id": "tap-card",
+      "name": "Tap Tag Card",
+      "price": 753,
+      "priceType": "fixed",
+      "active": true,
+      "description": "Listed price: ₹753. A tap-enabled card with the customer's logo printed on it; tapping opens its associated profile webpage. Before promising an order, confirm artwork, quantity, compatibility, customisation requirements, stock, and delivery timeline with the DR53 team. Do not invent card material, dimensions, durability, chip type, or delivery dates."
+    },
+    {
+      "id": "website",
+      "name": "Website Development",
+      "price": 5300,
+      "priceType": "starting",
+      "active": true,
+      "description": "Projects start at ₹5,300; this is not a guaranteed final price. Custom website development is scoped to the customer's requirements. Ask about the business, purpose, pages, content, design preferences, features, domain/hosting needs, and target date. The DR53 team must confirm final scope, cost, and timeline. Do not promise SEO, e-commerce, hosting, maintenance, or delivery dates unless confirmed. Website: https://dynamicrobotics53.com."
+    },
+    {
+      "id": "e-adapter",
+      "name": "E-Adapter",
+      "price": 2553,
+      "priceType": "fixed",
+      "active": true,
+      "description": "Listed price: ₹2,553. Described internally as a compact electronics/backup-power concept, but technical specifications and exact included components are not yet verified. Never claim compatibility, output, capacity, ports, certifications, warranty, availability, or performance. Offer to have the DR53 team confirm details before the customer decides."
+    }
+  ]
+}
